@@ -10,7 +10,7 @@ void SysTick_Init()
 
 void SysTick_DelayTicks(uint64_t ticks)
 {
-	uint64_t delayEndTicks = SysTick_ticks + SysTick->VAL - ticks;
+	uint64_t delayEndTicks = SysTick_ticks + SysTick->VAL - ticks - 1;
 
 	while (SysTick_ticks + SysTick->VAL > delayEndTicks);
 }
